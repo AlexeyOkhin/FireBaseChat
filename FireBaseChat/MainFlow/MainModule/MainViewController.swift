@@ -30,11 +30,14 @@ class MainViewController: UIViewController {
 
 
     @IBAction func enterButton(_ sender: UIButton) {
-        
+        let loginVC = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        navigationController?.pushViewController(loginVC, animated: true)
 
     }
 
     @IBAction func registerButton(_ sender: Any) {
+        let registerVC = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
+        navigationController?.pushViewController(registerVC, animated: true)
 
     }
 }

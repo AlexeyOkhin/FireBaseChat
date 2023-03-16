@@ -65,7 +65,6 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="enterButton:" destination="-1" eventType="touchUpInside" id="1bz-VX-FlI"/>
                                 <action selector="registerButton:" destination="-1" eventType="touchUpInside" id="Ffy-Is-2B2"/>
                             </connections>
                         </button>
