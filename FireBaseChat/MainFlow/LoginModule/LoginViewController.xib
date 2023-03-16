@@ -18,14 +18,72 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TextFieldImage" translatesAutoresizingMaskIntoConstraints="NO" id="5Hd-hA-48U">
+                    <rect key="frame" x="16" y="77" width="361" height="108"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="108" id="Dkj-vK-jKv"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s6d-Vx-jji">
+                    <rect key="frame" x="74" y="99" width="245" height="30.333333333333343"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30.333333333333343" id="AP8-Ua-fym"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TextFieldImage" translatesAutoresizingMaskIntoConstraints="NO" id="VK8-Ck-UbH">
+                    <rect key="frame" x="17" y="165" width="359" height="108"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="108" id="3FR-ba-6DQ"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="108" id="6Mk-49-d6k"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fh9-1s-0cv">
+                    <rect key="frame" x="75" y="187" width="243" height="29.333333333333343"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owS-e5-CqO">
+                    <rect key="frame" x="16" y="296" width="361" height="39"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <color key="tintColor" systemColor="systemGray5Color"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Вход"/>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemCyanColor"/>
+            <constraints>
+                <constraint firstItem="s6d-Vx-jji" firstAttribute="centerX" secondItem="VK8-Ck-UbH" secondAttribute="centerX" id="1Pt-t9-80m"/>
+                <constraint firstItem="fh9-1s-0cv" firstAttribute="top" secondItem="5Hd-hA-48U" secondAttribute="bottom" constant="2" id="8if-eZ-nlZ"/>
+                <constraint firstItem="5Hd-hA-48U" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="F6p-eB-ohq"/>
+                <constraint firstItem="5Hd-hA-48U" firstAttribute="centerX" secondItem="s6d-Vx-jji" secondAttribute="centerX" id="FyZ-IL-hUM"/>
+                <constraint firstItem="VK8-Ck-UbH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="17" id="Gil-h1-YGl"/>
+                <constraint firstItem="5Hd-hA-48U" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="18" id="Hdb-ap-oh3"/>
+                <constraint firstItem="owS-e5-CqO" firstAttribute="top" secondItem="VK8-Ck-UbH" secondAttribute="bottom" constant="23" id="NnT-pP-ZO0"/>
+                <constraint firstItem="5Hd-hA-48U" firstAttribute="trailing" secondItem="owS-e5-CqO" secondAttribute="trailing" id="ROl-m7-311"/>
+                <constraint firstItem="5Hd-hA-48U" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="SND-pf-OOq"/>
+                <constraint firstItem="s6d-Vx-jji" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="SpD-hS-7ig"/>
+                <constraint firstItem="5Hd-hA-48U" firstAttribute="leading" secondItem="owS-e5-CqO" secondAttribute="leading" id="TUA-2P-C22"/>
+                <constraint firstItem="VK8-Ck-UbH" firstAttribute="top" secondItem="s6d-Vx-jji" secondAttribute="bottom" constant="35.670000000000002" id="fpA-gQ-E3s"/>
+                <constraint firstItem="VK8-Ck-UbH" firstAttribute="centerX" secondItem="fh9-1s-0cv" secondAttribute="centerX" id="jrk-vV-FyF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="owS-e5-CqO" secondAttribute="bottom" constant="483" id="k1s-Uf-riB"/>
+                <constraint firstItem="owS-e5-CqO" firstAttribute="top" secondItem="fh9-1s-0cv" secondAttribute="bottom" constant="79.666666666666657" id="sPf-pO-k4T"/>
+                <constraint firstItem="s6d-Vx-jji" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="74" id="taW-5u-233"/>
+                <constraint firstItem="fh9-1s-0cv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="75" id="whN-SR-VqH"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-12"/>
         </view>
     </objects>
     <resources>
+        <image name="TextFieldImage" width="298" height="93"/>
         <systemColor name="systemCyanColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
