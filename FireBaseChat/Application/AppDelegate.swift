@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FirebaseCore
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,11 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         FirebaseApp.configure()
+
         window = UIWindow(frame: UIScreen.main.bounds)
         let mainVC = MainViewController(nibName: "MainViewController", bundle: nil)
-        let navigationVC = UINavigationController()
+        let navigationVC = UINavigationController(rootViewController: mainVC)
         navigationVC.navigationBar.tintColor = .white
-        navigationVC.pushViewController(mainVC, animated: true)
         window?.rootViewController = navigationVC
         window?.makeKeyAndVisible()
         return true
