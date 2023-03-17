@@ -25,7 +25,7 @@
                         <constraint firstAttribute="height" constant="108" id="Dkj-vK-jKv"/>
                     </constraints>
                 </imageView>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s6d-Vx-jji">
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s6d-Vx-jji">
                     <rect key="frame" x="74" y="99" width="245" height="30.333333333333343"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30.333333333333343" id="AP8-Ua-fym"/>
@@ -40,10 +40,10 @@
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="108" id="6Mk-49-d6k"/>
                     </constraints>
                 </imageView>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fh9-1s-0cv">
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fh9-1s-0cv">
                     <rect key="frame" x="75" y="187" width="243" height="29.333333333333343"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" textContentType="password"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owS-e5-CqO">
                     <rect key="frame" x="16" y="296" width="361" height="39"/>

@@ -21,13 +21,12 @@ class MainViewController: UIViewController {
     private func animationTitle() {
         var animationDuration = 0.0
         titleText.forEach { char in
-            Timer.scheduledTimer(withTimeInterval: 0.1 * animationDuration, repeats: false) { timer in
+            Timer.scheduledTimer(withTimeInterval: 0.1 * animationDuration, repeats: false) { _ in
                 self.titleLabel.text?.append(char)
             }
             animationDuration += 1
         }
     }
-
 
     @IBAction func enterButton(_ sender: UIButton) {
         let loginVC = LoginViewController(nibName: "LoginViewController", bundle: nil)
@@ -41,4 +40,3 @@ class MainViewController: UIViewController {
 
     }
 }
-
