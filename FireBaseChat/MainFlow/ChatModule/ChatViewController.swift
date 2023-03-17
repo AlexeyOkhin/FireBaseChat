@@ -9,6 +9,7 @@ import UIKit
 
 class ChatViewController: UIViewController {
 
+    @IBOutlet weak var chatTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatViewController" customModule="FireBaseChat" customModuleProvider="target">
             <connections>
+                <outlet property="chatTableView" destination="6lm-fR-OFh" id="KOu-4T-zuU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,21 +20,6 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bDj-GF-iAv">
-                    <rect key="frame" x="0.0" y="59" width="393" height="702"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="nxD-jq-OhP"/>
-                        <outlet property="delegate" destination="-1" id="IpD-DA-FNi"/>
-                    </connections>
-                </tableView>
-                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="qbl-it-OhN">
-                    <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                    <autoresizingMask key="autoresizingMask"/>
-                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qbl-it-OhN" id="jiI-Fp-Jga">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </tableViewCellContentView>
-                </tableViewCell>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uMK-J7-ti4">
                     <rect key="frame" x="39" y="784" width="271" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -49,19 +35,23 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="paperplane.fill" catalog="system"/>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6lm-fR-OFh">
+                    <rect key="frame" x="0.0" y="59" width="393" height="708"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemPurpleColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fQP-3K-n4W" secondAttribute="trailing" constant="16" id="30i-KK-ScG"/>
-                <constraint firstItem="bDj-GF-iAv" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="4B1-es-9ld"/>
-                <constraint firstItem="uMK-J7-ti4" firstAttribute="top" secondItem="bDj-GF-iAv" secondAttribute="bottom" constant="23" id="66p-kD-ONa"/>
+                <constraint firstItem="6lm-fR-OFh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3KA-6i-1Ux"/>
+                <constraint firstItem="fQP-3K-n4W" firstAttribute="top" secondItem="6lm-fR-OFh" secondAttribute="bottom" constant="17" id="Paf-cb-hqK"/>
                 <constraint firstItem="fQP-3K-n4W" firstAttribute="leading" secondItem="uMK-J7-ti4" secondAttribute="trailing" constant="16" id="QZl-Jo-MiS"/>
-                <constraint firstItem="bDj-GF-iAv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RIc-2X-iD0"/>
                 <constraint firstItem="uMK-J7-ti4" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="RSg-TM-5sh"/>
-                <constraint firstItem="bDj-GF-iAv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ZHC-pH-YpL"/>
-                <constraint firstItem="fQP-3K-n4W" firstAttribute="top" secondItem="bDj-GF-iAv" secondAttribute="bottom" constant="23" id="a2Q-gW-0gu"/>
+                <constraint firstItem="uMK-J7-ti4" firstAttribute="top" secondItem="6lm-fR-OFh" secondAttribute="bottom" constant="17" id="TXF-vK-0I3"/>
+                <constraint firstAttribute="trailing" secondItem="6lm-fR-OFh" secondAttribute="trailing" id="dZA-6u-Kh6"/>
                 <constraint firstItem="uMK-J7-ti4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="39" id="i9r-A5-DL4"/>
+                <constraint firstItem="6lm-fR-OFh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kqa-vT-YU2"/>
             </constraints>
             <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
         </view>
@@ -69,6 +59,9 @@
     <resources>
         <image name="paperplane.fill" catalog="system" width="128" height="119"/>
         <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
