@@ -54,7 +54,7 @@
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="Вход"/>
                     <connections>
-                        <action selector="loginActionButton:" destination="-1" eventType="touchUpInside" id="dDu-Kg-GQO"/>
+                        <action selector="loginActionButton:" destination="-1" eventType="touchUpInside" id="fGR-jl-HFm"/>
                     </connections>
                 </button>
             </subviews>
@@ -74,7 +74,6 @@
                 <constraint firstItem="5Hd-hA-48U" firstAttribute="leading" secondItem="owS-e5-CqO" secondAttribute="leading" id="TUA-2P-C22"/>
                 <constraint firstItem="VK8-Ck-UbH" firstAttribute="top" secondItem="s6d-Vx-jji" secondAttribute="bottom" constant="35.670000000000002" id="fpA-gQ-E3s"/>
                 <constraint firstItem="VK8-Ck-UbH" firstAttribute="centerX" secondItem="fh9-1s-0cv" secondAttribute="centerX" id="jrk-vV-FyF"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="owS-e5-CqO" secondAttribute="bottom" constant="483" id="k1s-Uf-riB"/>
                 <constraint firstItem="owS-e5-CqO" firstAttribute="top" secondItem="fh9-1s-0cv" secondAttribute="bottom" constant="79.666666666666657" id="sPf-pO-k4T"/>
                 <constraint firstItem="s6d-Vx-jji" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="74" id="taW-5u-233"/>
                 <constraint firstItem="fh9-1s-0cv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="75" id="whN-SR-VqH"/>

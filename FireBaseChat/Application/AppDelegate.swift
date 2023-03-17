@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         window = UIWindow(frame: UIScreen.main.bounds)
         let mainVC = MainViewController(nibName: "MainViewController", bundle: nil)
-        let navigationVC = UINavigationController(rootViewController: mainVC)
+        let navigationVC = UINavigationController()
+        navigationVC.navigationBar.tintColor = .white
+        navigationVC.pushViewController(mainVC, animated: true)
         window?.rootViewController = navigationVC
         window?.makeKeyAndVisible()
         return true

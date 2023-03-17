@@ -15,18 +15,18 @@ class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        passwordTF.isSecureTextEntry = true
     }
 
     @IBAction func registerActionButton(_ sender: UIButton) {
         guard let mail = emailTF.text, let pass = passwordTF.text else { return }
 
-        Auth.auth().createUser(withEmail: mail, password: pass) { _, error in
+        Auth.auth().createUser(withEmail: mail, password: pass) { [weak self] _, error in
             if let error = error {
-                self.showAlert(title: "Внимание", message: "\(error.localizedDescription)")
+                self?.showAlert(title: "Внимание", message: "\(error.localizedDescription)")
             } else {
                 let chatVC = ChatViewController(nibName: "ChatViewController", bundle: nil)
-                self.navigationController?.pushViewController(chatVC, animated: true)
+                self?.navigationController?.pushViewController(chatVC, animated: true)
             }
 
         }
