@@ -18,28 +18,23 @@ class ChatViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.hidesBackButton = true
-        title = "⚡️FireChat"
+        
         chatTableView.dataSource = self
         chatTableView.estimatedRowHeight = 100
         chatTableView.register(UINib(nibName: "MessageViewCell", bundle: nil),
                                forCellReuseIdentifier: MessageViewCell.identifier)
         getData()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         configureNavigation()
-        print("didAppear")
     }
 
     private func configureNavigation() {
-        // title = "⚡️FireChat"
+        title = "⚡️FireChat"
+        navigationItem.hidesBackButton = true
         let barRightItem = UIBarButtonItem(title: "LogOut",
                                            style: .plain,
                                            target: self,
                                            action: #selector(didTapLogout))
-        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = barRightItem
+       navigationItem.rightBarButtonItem = barRightItem
     }
 
     private func getData() {
