@@ -20,6 +20,7 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         
         chatTableView.dataSource = self
+        chatTableView.allowsSelection = false
         chatTableView.estimatedRowHeight = 100
         chatTableView.register(UINib(nibName: "MessageViewCell", bundle: nil),
                                forCellReuseIdentifier: MessageViewCell.identifier)
@@ -39,7 +40,7 @@ class ChatViewController: UIViewController {
 
     private func getData() {
 
-        dbMessage.collection("messages").addSnapshotListener { [weak self](querySnapshot, error) in
+        dbMessage.collection("messages").order(by: "date").addSnapshotListener { [weak self](querySnapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
             } else {
@@ -47,11 +48,13 @@ class ChatViewController: UIViewController {
                 for document in querySnapshot!.documents {
 
                     guard let body = document.data()["body"] as? String else { return }
-                    let sender = document.data()["sender"]
-                    let message = Message(body: body, avatar: UIImage(named: "MeAvatar"))
+                    guard let sender = document.data()["sender"] as? String else { return }
+                    let message = Message(body: body, avatar: UIImage(named: "MeAvatar"), sender: sender)
                     self?.messages.append(message)
                     DispatchQueue.main.async {
                         self?.chatTableView.reloadData()
+                        let indexPath = IndexPath(row: (self?.messages.count ?? 1) - 1, section: 0)
+                        self?.chatTableView.scrollToRow(at: indexPath, at: .top, animated: false)
                     }
 
                 }
@@ -61,12 +64,15 @@ class ChatViewController: UIViewController {
 
     @IBAction func sendActionButton(_ sender: UIButton) {
         guard let body = messageTF.text, let sender = Auth.auth().currentUser?.email else { return }
-
-        dbMessage.collection("messages").document().setData(["body": body, "sender": sender]) { error in
+        let date = Date().timeIntervalSince1970
+        dbMessage.collection("messages").document().setData(["body": body, "sender": sender, "date": date]) { [weak self] error in
             if let error = error {
-                self.showAlert(title: "Error", message: "\(error.localizedDescription)")
+                self?.showAlert(title: "Error", message: "\(error.localizedDescription)")
             } else {
-                print("Success setMessage")
+                DispatchQueue.main.async {
+                    self?.messageTF.text = nil
+                }
+
             }
         }
     }

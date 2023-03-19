@@ -14,13 +14,14 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTF: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        passwordTF.isSecureTextEntry = true
     }
 
     @IBAction func loginActionButton(_ sender: UIButton) {
 
         guard let mail = emailTF.text, let pass = passwordTF.text else { return }
         sender.isEnabled = false
-        Auth.auth().signIn(withEmail: "1@1.com", password: "123456") { [weak self] _, error in
+        Auth.auth().signIn(withEmail: mail, password: pass) { [weak self] _, error in
             if let error = error {
                 self?.showAlert(title: "Внимание", message: "\(error.localizedDescription)")
                 sender.isEnabled = true

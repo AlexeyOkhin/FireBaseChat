@@ -6,6 +6,7 @@ target 'FireBaseChat' do
   use_frameworks!
 
   # Pods for FireBaseChat
-pod 'SwiftLint'
+# pod 'SwiftLint'
+pod 'IQKeyboardManagerSwift'
 
 end

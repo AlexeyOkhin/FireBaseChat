@@ -6,14 +6,16 @@
 //
 
 import UIKit
+import Firebase
 
 class MessageViewCell: UITableViewCell {
 
     static let identifier = "\(MessageViewCell.self)"
 
     @IBOutlet weak var bodyLabel: UILabel!
-    @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var rightImage: UIImageView!
     @IBOutlet weak var messageView: UIView!
+    @IBOutlet weak var leftImage: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,7 +27,19 @@ class MessageViewCell: UITableViewCell {
     }
 
     func configure(model: Message) {
-        bodyLabel.text = model.body
-        avatarImage .image = model.avatar
+        if model.sender == Auth.auth().currentUser?.email {
+            leftImage.isHidden = true
+            rightImage.isHidden = false
+            messageView.backgroundColor = .systemBlue
+            bodyLabel.textColor = .white
+            bodyLabel.text = model.body
+        } else {
+            leftImage.isHidden = false
+            rightImage.isHidden = true
+            messageView.backgroundColor = .systemPink
+            bodyLabel.textColor = .black
+            bodyLabel.text = model.body
+
+        }
     }
 }

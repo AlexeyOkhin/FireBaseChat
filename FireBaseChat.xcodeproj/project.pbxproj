@@ -258,7 +258,7 @@
 				0C03954E29C30358009BDE37 /* Sources */,
 				0C03954F29C30358009BDE37 /* Frameworks */,
 				0C03955029C30358009BDE37 /* Resources */,
-				0CEAB22029C4575700CC23B1 /* ShellScript */,
+				03DC694E9FF2528B4852C318 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -353,23 +353,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0CEAB22029C4575700CC23B1 /* ShellScript */ = {
+		03DC694E9FF2528B4852C318 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FireBaseChat/Pods-FireBaseChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FireBaseChat/Pods-FireBaseChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FireBaseChat/Pods-FireBaseChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		0EC69B3AC14751124DEAF4B8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
